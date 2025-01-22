@@ -16,7 +16,7 @@ load_dotenv()
 app = Flask(__name__)
 
 # Enable CORS for a specific frontend URL
-frontend_url = "https://your-frontend-url.onrender.com"  # Replace with your actual frontend URL
+frontend_url = "https://lms-frontend-nwiw.onrender.com"  # Replace with your actual frontend URL
 CORS(app, resources={r"/api/*": {"origins": frontend_url}})  # Allow only your frontend URL to access /api/* routes
 
 # Get the database URI from environment variables
