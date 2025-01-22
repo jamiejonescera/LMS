@@ -8,12 +8,16 @@ import logging
 
 # Set up logging
 logging.basicConfig(level=logging.DEBUG)
+
 # Load environment variables from .env file
 load_dotenv()
 
 # Initialize Flask app
 app = Flask(__name__)
-CORS(app)
+
+# Enable CORS for a specific frontend URL
+frontend_url = "https://your-frontend-url.onrender.com"  # Replace with your actual frontend URL
+CORS(app, resources={r"/api/*": {"origins": frontend_url}})  # Allow only your frontend URL to access /api/* routes
 
 # Get the database URI from environment variables
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
@@ -31,7 +35,7 @@ def test_db_connection():
         return 'Database connection is working!', 200
     except Exception as e:
         return f'Database connection failed: {str(e)}', 500
-    
+
 # Import your Blueprints (make sure all routes are included)
 from routes.departmentRoutes import department_bp
 from routes.supplierRoutes import supplier_bp
