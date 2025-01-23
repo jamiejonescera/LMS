@@ -8,7 +8,7 @@ export function usePurchase() {
   useEffect(() => {
     async function fetchPurchase() {
       try {
-        const response = await fetch('/api/purchase/');
+        const response = await fetch('https://lms-backend-58c4.onrender.com/api/purchase/');
         if (!response.ok) {
           throw new Error('Failed to fetch purchase');
         }

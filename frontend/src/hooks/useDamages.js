@@ -42,7 +42,8 @@ export function useDamages() {
 
   const fetchDamages = async () => {
     try {
-      const response = await fetch('/api/damages/');
+      const response = await fetch('https://lms-backend-58c4.onrender.com/api/damages/');
+
       if (!response.ok) {
         throw new Error('Failed to fetch damages');
       }

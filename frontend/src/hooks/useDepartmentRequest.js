@@ -8,7 +8,8 @@ export function useDepartmentRequest() {
   useEffect(() => {
     async function fetchDepartmentRequests() {
       try {
-        const response = await fetch('/api/department-request/');
+        const response = await fetch('https://lms-backend-58c4.onrender.com/api/department-request/');
+
         if (!response.ok) {
           throw new Error('Failed to fetch department requests');
         }

@@ -10,7 +10,7 @@ export function useMaintenance() {
   useEffect(() => {
     async function fetchMaintenance() {
       try {
-        const response = await fetch('/api/maintenance/');
+        const response = await fetch('https://lms-backend-58c4.onrender.com/api/maintenance/');
         if (!response.ok) {
           throw new Error('Failed to fetch maintenance records');
         }

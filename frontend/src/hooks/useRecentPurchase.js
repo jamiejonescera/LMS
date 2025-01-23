@@ -9,7 +9,7 @@ export function useRecentPurchase() {
     // Function to fetch the recent purchases from the API
     async function fetchRecentPurchase() {
       try {
-        const response = await fetch('/api/purchase/recent');
+        const response = await fetch('https://lms-backend-58c4.onrender.com/api/purchase/recent');
         
         if (!response.ok) {
           throw new Error('Failed to fetch recent purchase');

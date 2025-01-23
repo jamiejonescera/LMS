@@ -315,7 +315,8 @@ const ManageMaintenanceModal = ({ isOpen, onClose, maintenance, setMaintenanceRe
 
   const handleTakeAction = async () => {
     try {
-      const response = await fetch(`/api/maintenance/take_action/${maintenance.maintenance_id}`, {
+      const response = await fetch(`https://lms-backend-58c4.onrender.com/api/maintenance/take_action/${maintenance.maintenance_id}`, {
+
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
       });
@@ -342,7 +343,8 @@ const ManageMaintenanceModal = ({ isOpen, onClose, maintenance, setMaintenanceRe
 
   const handleCompleteAction = async () => {
     try {
-      const response = await fetch(`/api/maintenance/take_action_completed/${maintenance.maintenance_id}`, {
+      const response = await fetch(`https://lms-backend-58c4.onrender.com/api/maintenance/take_action_completed/${maintenance.maintenance_id}`, {
+
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ notes }),
@@ -370,7 +372,8 @@ const ManageMaintenanceModal = ({ isOpen, onClose, maintenance, setMaintenanceRe
 
   const handleCondemnAction = async () => {
     try {
-      const response = await fetch(`/api/maintenance/take_action_condemned/${maintenance.maintenance_id}`, {
+      const response = await fetch(`https://lms-backend-58c4.onrender.com/api/maintenance/take_action_condemned/${maintenance.maintenance_id}`, {
+
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ notes }),

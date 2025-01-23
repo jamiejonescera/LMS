@@ -10,7 +10,8 @@ export function useGetTopPurchase() {
     async function fetchTopPurchases() {
       try {
         // Fetch data from the API
-        const response = await fetch('/api/purchase/top10approvedproducts');
+
+        const response = await fetch('https://lms-backend-58c4.onrender.com/api/purchase/top10approvedproducts');
         if (!response.ok) {
           throw new Error('Failed to fetch top purchases');
         }
