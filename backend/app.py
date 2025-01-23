@@ -16,7 +16,7 @@ load_dotenv()
 app = Flask(__name__)
 
 # Enable CORS for specific frontend URLs
-frontend_urls = ["https://lms-qx1v.onrender.com", "http://localhost:3000"]  # Add local URL for testing
+frontend_urls = ["https://lms-client-rr9s.onrender.com", "http://localhost:3000"]  # Add local URL for testing
 CORS(app, resources={r"/api/*": {"origins": frontend_urls}})
 
 # Get the database URI from environment variables
@@ -40,7 +40,12 @@ def test_db_connection():
 # Define a test route for frontend-backend connection
 @app.route('/api/test', methods=['GET'])
 def test_endpoint():
-    return jsonify({"message": "Backend is connected!"})
+    try:
+        # Simulate a simple test response
+        return jsonify({"message": "Backend is connected!"}), 200
+    except Exception as e:
+        # If there's an error, send a message indicating a failure
+        return jsonify({"error": "Failed to connect backend.", "details": str(e)}), 500
 
 # Log all incoming requests
 @app.before_request
