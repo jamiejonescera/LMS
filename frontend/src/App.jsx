@@ -94,12 +94,11 @@ import DepartmentRequest from './pages/DepartmentRequest';
 const App = () => {
   // Test backend connection on app load
   useEffect(() => {
-    fetch('https://lms-backend-58c4.onrender.com/api/test')
+    fetch('/api/test')  // This will be proxied to the backend
       .then((response) => response.json())
       .then((data) => console.log('Backend test response:', data))
       .catch((error) => console.error('Error testing backend connection:', error));
   }, []);
-
   return (
     <>
       <Toaster /> {/* Notifications component from react-hot-toast */}
