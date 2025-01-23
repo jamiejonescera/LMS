@@ -7,7 +7,7 @@ export default defineConfig({
     port: 3002,
     proxy: {
       "/api": {
-        target: "https://lms-backend-58c4.onrender.com",
+        target: "http://localhost:5000",
         secure: false,
       },
     },
