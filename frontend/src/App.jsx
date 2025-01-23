@@ -74,7 +74,6 @@
 // };
 
 // export default App;
-import React, { useEffect } from "react";
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom'; 
 import Main from './components/Main';
@@ -94,22 +93,6 @@ import ProductSupplier from './pages/ProductSupplier';
 import DepartmentRequest from './pages/DepartmentRequest';
 
 const App = () => {
-    // Test backend connection on app load
-    useEffect(() => {
-      const backendUrl =
-        process.env.NODE_ENV === "production"
-          ? "https://lms-backend-58c4.onrender.com"
-          : "/api"; // Proxy works in development
-  
-      console.log("Backend URL:", backendUrl);  // To check if URL is correct
-  
-      fetch(`${backendUrl}/api/test`) // Proxies to backend in development
-        .then((response) => response.json())
-        .then((data) => console.log("Backend test response:", data))
-        .catch((error) =>
-          console.error("Error testing backend connection:", error)
-        );
-    }, []);
   return (
     <>
       <Toaster /> {/* Notifications component from react-hot-toast */}
