@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from dotenv import load_dotenv
@@ -15,10 +15,9 @@ load_dotenv()
 # Initialize Flask app
 app = Flask(__name__)
 
-# Enable CORS for specific frontend URLs
-# CORS configuration: Allow frontend URL from environment variables
-frontend_urls = os.getenv('FRONTEND_URLS').split(',')
-CORS(app, resources={r"/api/*": {"origins": frontend_urls}})
+# Enable CORS for a specific frontend URL
+frontend_url = "https://lms-frontend-nwiw.onrender.com"  # Replace with your actual frontend URL
+CORS(app, resources={r"/api/*": {"origins": frontend_url}})  # Allow only your frontend URL to access /api/* routes
 
 # Get the database URI from environment variables
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
@@ -35,23 +34,7 @@ def test_db_connection():
         result = db.session.execute(text('SELECT 1'))
         return 'Database connection is working!', 200
     except Exception as e:
-        logging.error(f"Database connection failed: {e}")
         return f'Database connection failed: {str(e)}', 500
-
-# Define a test route for frontend-backend connection
-@app.route('/api/test', methods=['GET'])
-def test_endpoint():
-    try:
-        # Simulate a simple test response
-        return jsonify({"message": "Backend is connected!"}), 200
-    except Exception as e:
-        # If there's an error, send a message indicating a failure
-        return jsonify({"error": "Failed to connect backend.", "details": str(e)}), 500
-
-# Log all incoming requests
-@app.before_request
-def log_request():
-    logging.info(f"{request.method} request received at {request.path}")
 
 # Import your Blueprints (make sure all routes are included)
 from routes.departmentRoutes import department_bp
@@ -79,11 +62,10 @@ app.register_blueprint(product_supplier_bp)
 app.register_blueprint(maintenance_bp)
 app.register_blueprint(departmentrequest_bp)
 
-# Define the root route
 @app.route('/')
 def hello():
     return 'Hotdog'
 
 # Run the app
 if __name__ == '__main__':
-    app.run(debug=os.getenv('DEBUG', 'False') == 'True', port=8000, host='0.0.0.0')
+    app.run(debug=True, port=8000, host='0.0.0.0')
