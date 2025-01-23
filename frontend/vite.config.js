@@ -3,12 +3,12 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
+  base: "/", // Ensure this matches your deployment setup
   server: {
-    port: process.env.PORT || 3002, // Use the port provided by Render, fallback to 3002 for local development
-    host: "0.0.0.0", // Make the server accessible externally
+    port: 3002,
     proxy: {
       "/api": {
-        target: "https://lms-backend-58c4.onrender.com", // Proxy API requests to your backend service
+        target: "https://lms-backend-58c4.onrender.com",
         changeOrigin: true,
         secure: true,
       },
