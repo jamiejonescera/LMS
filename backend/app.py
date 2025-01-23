@@ -86,4 +86,4 @@ def hello():
 
 # Run the app
 if __name__ == '__main__':
-    app.run(debug=os.getenv('DEBUG', 'False') == 'True', port=int(os.getenv('PORT', 5000)), host='0.0.0.0')
+    app.run(debug=os.getenv('DEBUG', 'False') == 'True', port=8000, host='0.0.0.0')
