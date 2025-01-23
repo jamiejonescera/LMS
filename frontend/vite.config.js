@@ -8,7 +8,8 @@ export default defineConfig({
     proxy: {
       "/api": {
         target: "https://lms-backend-58c4.onrender.com",
-        secure: false,
+        changeOrigin: true,
+        secure: true,
       },
     },
   },
