@@ -74,8 +74,7 @@
 // };
 
 // export default App;
-import React, { useEffect } from "react";
-import React from 'react';
+import React, { useEffect } from "react";  // Only one import
 import { Routes, Route, Navigate } from 'react-router-dom'; 
 import Main from './components/Main';
 import { Toaster } from 'react-hot-toast';
@@ -92,6 +91,7 @@ import Inventory from './pages/Inventory';
 import Maintenance from './pages/Maintenance';
 import ProductSupplier from './pages/ProductSupplier';
 import DepartmentRequest from './pages/DepartmentRequest';
+
 
 const App = () => {
     // Test backend connection on app load
