@@ -99,45 +99,45 @@ export default function Products() {
     });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+    const handleSubmit = async (e) => {
+      e.preventDefault();
 
-    const newProduct = {
-      name: formValues.productName,
-      category: formValues.category,
-      product_type: formValues.productType,
-      model: formValues.model || 'N/A',
-      brand: formValues.brand || 'N/A',
-    };
+      const newProduct = {
+        name: formValues.productName,
+        category: formValues.category,
+        product_type: formValues.productType,
+        model: formValues.model || 'N/A',
+        brand: formValues.brand || 'N/A',
+      };
 
-    try {
-      const response = await fetch('/api/products/create', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(newProduct),
-      });
+      try {
+        const response = await fetch(`${process.env.REACT_APP_BASE_URL}/products/create`, { // Use REACT_APP_BASE_URL here
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(newProduct),
+        });
 
-      if (!response.ok) {
-        const errorResponse = await response.json();
-        throw new Error(errorResponse.error || 'Failed to create product');
+        if (!response.ok) {
+          const errorResponse = await response.json();
+          throw new Error(errorResponse.error || 'Failed to create product');
+        }
+
+        const { product, message } = await response.json();
+
+        closeModal();
+        toast.success(message || 'Product added successfully!');
+
+        setProducts((prevProducts) => [
+          ...prevProducts,
+          product,
+        ]);
+      } catch (error) {
+        closeModal();
+        toast.error('Error: ' + (error.message || 'An unexpected error occurred.'));
       }
-
-      const { product, message } = await response.json();
-
-      closeModal();
-      toast.success(message || 'Product added successfully!');
-
-      setProducts((prevProducts) => [
-        ...prevProducts,
-        product,
-      ]);
-    } catch (error) {
-      closeModal();
-      toast.error('Error: ' + (error.message || 'An unexpected error occurred.'));
-    }
-  };
+    };
 
   const handleUpdate = async (e) => {
     e.preventDefault();
