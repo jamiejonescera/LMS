@@ -37,7 +37,8 @@ export default function PurchaseList() {
     }
   
     try {
-      const response = await fetch(`/api/evaluate/create/${selectedRequest.request_id}`, {
+      const response = await fetch(`https://lms-backend-58c4.onrender.com/api/evaluate/create/${selectedRequest.request_id}`, {
+
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

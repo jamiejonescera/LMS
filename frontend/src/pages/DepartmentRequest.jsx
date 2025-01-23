@@ -52,7 +52,7 @@ export default function DepartmentRequest() {
     };
 
     try {
-      const response = await fetch('/api/department-request/create', {
+      const response = await fetch('https://lms-backend-58c4.onrender.com/api/department-request/create', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

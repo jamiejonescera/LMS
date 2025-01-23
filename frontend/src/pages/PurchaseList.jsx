@@ -37,7 +37,8 @@ export default function PurchaseList() {
   // Handle deletion of a purchase request
   const deletePurchaseRequest = async (requestId) => {
     try {
-      const response = await fetch(`/api/purchase/delete/${requestId}`, {
+      const response = await fetch(`https://lms-backend-58c4.onrender.com/api/purchase/delete/${requestId}`, {
+
         method: 'DELETE',
       });
 

@@ -41,7 +41,8 @@ export default function Suppliers() {
   // Add new supplier
   const handleAddSupplier = async () => {
     try {
-      const response = await fetch('/api/supplier/create', {
+      const response = await fetch(`https://lms-backend-58c4.onrender.com/api/supplier/create`, {
+
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
@@ -67,7 +68,8 @@ export default function Suppliers() {
   // Update supplier
   const handleUpdateSupplier = async () => {
     try {
-      const response = await fetch(`/api/supplier/update/${selectedSupplierId}`, {
+      const response = await fetch(`https://lms-backend-58c4.onrender.com/api/supplier/update/${selectedSupplierId}`, {
+
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
@@ -99,7 +101,8 @@ export default function Suppliers() {
   // Delete supplier
   const handleDeleteSupplier = async () => {
     try {
-      const response = await fetch(`/api/supplier/delete/${selectedSupplierId}`, {
+      const response = await fetch(`https://lms-backend-58c4.onrender.com/api/supplier/delete/${selectedSupplierId}`, {
+
         method: 'DELETE',
       });
 

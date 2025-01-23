@@ -39,7 +39,7 @@ export default function Departments() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('/api/department/create', {
+      const response = await fetch('https://lms-backend-58c4.onrender.com/api/department/create', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -75,7 +75,7 @@ export default function Departments() {
   // Handle deleting a department
   const handleDelete = async (departmentId) => {
     try {
-      const response = await fetch(`/api/department/delete/${departmentId}`, {
+      const response = await fetch(`https://lms-backend-58c4.onrender.com/api/department/delete/${departmentId}`, {
         method: 'DELETE',
       });
 
@@ -98,7 +98,7 @@ export default function Departments() {
   const handleUpdate = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`/api/department/update/${selectedDepartmentId}`, {
+      const response = await fetch(`https://lms-backend-58c4.onrender.com/api/department/update/${selectedDepartmentId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

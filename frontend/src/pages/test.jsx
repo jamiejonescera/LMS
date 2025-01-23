@@ -347,7 +347,8 @@ export default function Products() {
     };
   
     try {
-      const response = await fetch(`/api/products/update/${currentProductId}`, {
+      const response = await fetch(`https://lms-backend-58c4.onrender.com/api/products/update/${currentProductId}`, {
+
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -419,7 +420,8 @@ export default function Products() {
     };
 
     try {
-      const response = await fetch('/api/products/create', {
+      const response = await fetch('https://lms-backend-58c4.onrender.com/api/products/create', {
+
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -454,7 +456,8 @@ export default function Products() {
 
   const handleDelete = async (productId) => {
     try {
-      const response = await fetch(`/api/products/delete/${productId}`, {
+      const response = await fetch(`https://lms-backend-58c4.onrender.com/api/products/delete/${productId}`, {
+
         method: 'DELETE',
       });
 

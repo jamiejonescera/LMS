@@ -468,7 +468,8 @@ export default function ProductSupplier() {
     };
 
     try {
-      const response = await fetch('/api/product-suppliers/create', {
+      const response = await fetch('https://lms-backend-58c4.onrender.com/api/product-suppliers/create', {
+
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newSupplier),
@@ -492,7 +493,8 @@ export default function ProductSupplier() {
 
   const handleToggleStatus = async (productSupplierId) => {
     try {
-      const response = await fetch(`/api/product-suppliers/toggle-status/${productSupplierId}`, {
+      const response = await fetch(`https://lms-backend-58c4.onrender.com/api/product-suppliers/toggle-status/${productSupplierId}`, {
+
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
       });
@@ -543,7 +545,8 @@ export default function ProductSupplier() {
     if (!selectedSupplierId) return;
     
     try {
-      const response = await fetch(`/api/product-suppliers/delete/${selectedSupplierId}`, {
+      const response = await fetch(`https://lms-backend-58c4.onrender.com/api/product-suppliers/delete/${selectedSupplierId}`, {
+
         method: 'DELETE',
       });
 

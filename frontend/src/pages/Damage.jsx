@@ -19,7 +19,7 @@ export default function Damage() {
 
   const markAsReplaced = async (damage) => {
     try {
-      const response = await fetch(`/api/damages/update/${damage.damaged_item_id}`, {
+      const response = await fetch(`https://lms-backend-58c4.onrender.com/api/damages/update/${damage.damaged_item_id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

@@ -73,7 +73,8 @@ export default function Purchase() {
   
       try {
         // Send request to create the purchase
-        const response = await fetch('/api/purchase/create', {
+        const response = await fetch('https://lms-backend-58c4.onrender.com/api/purchase/create', {
+
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
