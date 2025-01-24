@@ -139,10 +139,14 @@ export default function Departments() {
   return (
     <div className="p-6">
       <div className="flex items-center justify-between mb-6 border-b-2 border-gray-500 pb-2">
-          <h2 className="text-2xl font-bold">
-            <a href="https://inventoryapp1-o2l3.onrender.com/api/department/create" target="_blank">
-            Department Facility
-            </a>
+            <h2 className="text-2xl font-bold">
+              <a 
+              href="https://inventoryapp1-o2l3.onrender.com/api/department/create" 
+              target="_blank" 
+              className="text-red-600 font-extrabold underline"
+              >
+                Department Facility
+              </a>
           </h2>
         <div className="flex items-center">
           <button
