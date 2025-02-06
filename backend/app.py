@@ -16,8 +16,11 @@ load_dotenv()
 app = Flask(__name__)
 
 # Enable CORS for specific frontend URLs
-frontend_urls = ["https://lms-client-rr9s.onrender.com", "http://localhost:3000"]  # Add local URL for testing
-CORS(app, resources={r"/api/*": {"origins": frontend_urls}})
+# frontend_urls = ["https://lms-client-rr9s.onrender.com", "http://localhost:3000"]  # Add local URL for testing
+# CORS(app, resources={r"/api/*": {"origins": frontend_urls}})
+
+CORS(app, resources={r"/api/*": {"origins": "*"}})  # Allow all origins for development
+
 
 # Get the database URI from environment variables
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
