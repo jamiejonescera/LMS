@@ -49,13 +49,13 @@ export default function Departments() {
 
       if (!response.ok) {
         const errorResponse = await response.json();
-        throw new Error(errorResponse.error || 'Failed to create department');
+        throw new Error(errorResponse.error || 'Failed to create Facility');
       }
 
       const { department, message } = await response.json();
 
       closeModal();
-      toast.success(message || 'Department added successfully!');
+      toast.success(message || 'Facility added successfully!');
 
       setDepartments((prevDepartments) => [
         ...prevDepartments,
@@ -140,12 +140,8 @@ export default function Departments() {
     <div className="p-6">
       <div className="flex items-center justify-between mb-6 border-b-2 border-gray-500 pb-2">
             <h2 className="text-2xl font-bold">
-              <a 
-              href="https://inventoryapp1-o2l3.onrender.com/api/department/create" 
-              target="_blank" 
-              className="text-red-600 font-extrabold underline"
-              >
-                Department Facility
+              <a>
+                Facility
               </a>
           </h2>
         <div className="flex items-center">
@@ -154,8 +150,16 @@ export default function Departments() {
             type="button"
             className="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5"
           >
-            <FontAwesomeIcon icon={faPlus} className="mr-2" />  DEPARTMENT
+            <FontAwesomeIcon icon={faPlus} className="mr-2" />  FACILITY
           </button>
+          {/* <button
+            onClick={() => window.open("https://inventoryapp1-o2l3.onrender.com", "_blank")}
+            type="button"
+            className="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5"
+          >
+          <FontAwesomeIcon icon={faPlus} className="mr-2" /> FACILITY
+        </button> */}
+
         </div>
       </div>
 
@@ -172,7 +176,7 @@ export default function Departments() {
       )}
       {departments.length === 0 && !loading && !error && (
         <div className="flex justify-center items-center h-32 text-gray-500">
-          <p>No Department available.</p>
+          <p>No Facility available.</p>
         </div>
       )}
 
@@ -181,7 +185,7 @@ export default function Departments() {
           <table className="w-full text-sm text-left rtl:text-right text-gray-500">
             <thead className="text-xs text-gray-700 uppercase bg-gray-50">
               <tr>
-                <th scope="col" className="px-6 py-4">Department Name</th>
+                <th scope="col" className="px-6 py-4">Facility Name</th>
                 <th scope="col" className="px-6 py-4">Created at</th>
                 <th scope="col" className="px-6 py-4">Updated at</th>
                 <th scope="col" className="px-6 py-4">Actions</th>
@@ -224,18 +228,18 @@ export default function Departments() {
       {isModalOpen && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
           <div className="bg-white rounded-lg p-6 w-96">
-            <h2 className="text-xl font-semibold mb-4 text-center">Add Department</h2>
+            <h2 className="text-xl font-semibold mb-4 text-center">Add Facility</h2>
             <form onSubmit={handleSubmit}>
               <div className="mb-4">
-                <label htmlFor="departmentName" className="block text-sm font-medium text-gray-700">Department Name</label>
+                <label htmlFor="departmentName" className="block text-sm font-medium text-gray-700">Facility Name</label>
                 <input
                   type="text"
                   id="departmentName"
                   name="departmentName"
-                  className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+                 className="mt-1 block w-full px-4 py-2 bg-gray-100 text-gray-900 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
                   value={departmentName}
                   onChange={(e) => setDepartmentName(e.target.value)}
-                  placeholder='Enter Department'
+                  placeholder='Enter Facility'
                   required
                   autoComplete='off'
                 />
@@ -264,21 +268,22 @@ export default function Departments() {
       {isUpdateModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
           <div className="bg-white rounded-lg p-6 w-96">
-            <h2 className="text-xl font-semibold mb-4 text-center">Update Department</h2>
+            <h2 className="text-xl font-semibold mb-4 text-center">Update Facility</h2>
             <form onSubmit={handleUpdate}>
               <div className="mb-4">
-                <label htmlFor="departmentName" className="block text-sm font-medium text-gray-700">Department Name</label>
+                <label htmlFor="departmentName" className="block text-sm font-medium text-gray-700">Facility Name</label>
                 <input
-                  type="text"
-                  id="departmentName"
-                  name="departmentName"
-                  className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
-                  value={departmentName}
-                  onChange={(e) => setDepartmentName(e.target.value)}
-                  placeholder='Enter Department'
-                  required
-                  autoComplete='off'
-                />
+                    type="text"
+                    id="departmentName"
+                    name="departmentName"
+                    className="mt-1 block w-full px-4 py-2 bg-gray-100 text-gray-900 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+                    value={departmentName}
+                    onChange={(e) => setDepartmentName(e.target.value)}
+                    placeholder='Enter Department'
+                    required
+                    autoComplete='off'
+                  />
+
               </div>
               <div className="flex justify-end gap-4">
                 <button

@@ -68,7 +68,8 @@ const ProductModal = ({ isOpen, closeModal, handleSubmit, formValues, setFormVal
               <select
                 id="productType"
                 name="productType"
-                className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+               className="mt-1 block w-full px-4 py-2 bg-gray-100 text-gray-900 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+
                 value={formValues.productType}
                 onChange={(e) => setFormValues({ ...formValues, productType: e.target.value, category: "" })}
                 required
@@ -106,7 +107,8 @@ const ProductModal = ({ isOpen, closeModal, handleSubmit, formValues, setFormVal
               type="text"
               id="productName"
               name="productName"
-              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+             className="mt-1 block w-full px-4 py-2 bg-gray-100 text-gray-900 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+
               value={formValues.productName}
               onChange={(e) => setFormValues({ ...formValues, productName: e.target.value })}
               placeholder="Enter Product Name"
@@ -121,7 +123,8 @@ const ProductModal = ({ isOpen, closeModal, handleSubmit, formValues, setFormVal
               type="text"
               id="model"
               name="model"
-              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="mt-1 block w-full px-4 py-2 bg-gray-100 text-gray-900 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+
               value={formValues.model}
               onChange={(e) => setFormValues({ ...formValues, model: e.target.value })}
               placeholder="Enter Model"
@@ -135,7 +138,8 @@ const ProductModal = ({ isOpen, closeModal, handleSubmit, formValues, setFormVal
               type="text"
               id="brand"
               name="brand"
-              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+             className="mt-1 block w-full px-4 py-2 bg-gray-100 text-gray-900 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+
               value={formValues.brand}
               onChange={(e) => setFormValues({ ...formValues, brand: e.target.value })}
               placeholder="Enter Brand"

@@ -226,7 +226,7 @@ export default function Products() {
       <div className="flex items-center justify-between mb-6 border-b-2 border-gray-500 pb-2">
         <h2 className="text-2xl font-bold">Predefined Products</h2>
         <div className="flex items-center">
-          <label className="input input-bordered flex items-center gap-20 mr-5">
+          <label className="input input-bordered flex items-center gap-20 mr-5 bg-gray-100 text-gray-900 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500">
             <input
               type="text"
               className="grow"
@@ -254,6 +254,20 @@ export default function Products() {
           >
             <FontAwesomeIcon icon={faPlus} className="mr-2" /> PRODUCTS
           </button>
+            {/* <button
+              onClick={() => window.open("https://inventoryapp1-o2l3.onrender.com/inventory/", "_blank")}
+              type="button"
+              className="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5"
+            >
+              <FontAwesomeIcon icon={faPlus} className="mr-2" /> PRODUCTS
+            </button> */}
+
+
+
+
+
+
+
         </div>
       </div>
       <CategoryDescription />

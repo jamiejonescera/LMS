@@ -141,7 +141,7 @@ export default function Dashboard() {
 
       {/* Inventory Table Section */}
       <div className="mt-6">
-        <h3 className="text-lg font-semibold mb-4">Recent Department Requests</h3>
+        <h3 className="text-lg font-semibold mb-4">Inventory Requests</h3>
         {loading ? (
           <p>Loading...</p>
         ) : error ? (

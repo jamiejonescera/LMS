@@ -107,20 +107,20 @@ import ProductSupplier from './pages/ProductSupplier';
 import DepartmentRequest from './pages/DepartmentRequest';
 
 const App = () => {
-  // Test backend connection on app load
-  useEffect(() => {
-    const backendUrl =
-      process.env.REACT_APP_BASE_URL || "/api"; // Default to proxy in development
+  // // Test backend connection on app load
+  // useEffect(() => {
+  //   const backendUrl =
+  //     process.env.REACT_APP_BASE_URL || "/api"; // Default to proxy in development
 
-    console.log("Backend URL:", backendUrl);  // Log the backend URL for checking
+  //   console.log("Backend URL:", backendUrl);  // Log the backend URL for checking
 
-    fetch(`${backendUrl}/api/test`) // Proxies to backend in development
-      .then((response) => response.json())
-      .then((data) => console.log("Backend test response:", data))
-      .catch((error) =>
-        console.error("Error testing backend connection:", error)
-      );
-  }, []);
+  //   fetch(`${backendUrl}/api/test`) // Proxies to backend in development
+  //     .then((response) => response.json())
+  //     .then((data) => console.log("Backend test response:", data))
+  //     .catch((error) =>
+  //       console.error("Error testing backend connection:", error)
+  //     );
+  // }, []);
   return (
     <>
       <Toaster /> {/* Notifications component from react-hot-toast */}

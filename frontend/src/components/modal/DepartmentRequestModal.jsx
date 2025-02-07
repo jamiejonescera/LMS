@@ -83,7 +83,7 @@ const DepartmentRequestModal = ({ isOpen, onClose, onSubmit }) => {
             <select
               id="departmentName"
               name="departmentName"
-              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+             className="mt-1 block w-full px-4 py-2 bg-gray-100 text-gray-900 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
               value={formValues.departmentId}
               onChange={handleDepartmentChange}
               required
@@ -113,7 +113,7 @@ const DepartmentRequestModal = ({ isOpen, onClose, onSubmit }) => {
             <select
               id="productName"
               name="productName"
-              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+             className="mt-1 block w-full px-4 py-2 bg-gray-100 text-gray-900 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
               value={formValues.productId}
               onChange={handleProductChange}
               required
@@ -163,7 +163,7 @@ const DepartmentRequestModal = ({ isOpen, onClose, onSubmit }) => {
               type="number"
               id="quantity"
               name="quantity"
-              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+             className="mt-1 block w-full px-4 py-2 bg-gray-100 text-gray-900 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
               value={formValues.quantity}
               onChange={(e) => {
                 const value = e.target.value;

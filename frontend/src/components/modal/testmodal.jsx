@@ -29,7 +29,7 @@ export default function AddSupplierModal({
             name="supplier_name"
             value={formData.supplier_name}
             onChange={handleInputChange}
-            className="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+            className="mt-1 block w-full px-4 py-2 bg-gray-100 text-gray-900 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
             placeholder="Enter supplier name"
           />
         </div>
@@ -47,7 +47,7 @@ export default function AddSupplierModal({
             name="address"
             value={formData.address}
             onChange={handleInputChange}
-            className="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+            className="mt-1 block w-full px-4 py-2 bg-gray-100 text-gray-900 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
             placeholder="Enter address"
           />
         </div>
@@ -65,7 +65,7 @@ export default function AddSupplierModal({
             name="contact_number"
             value={formData.contact_number}
             onChange={handleInputChange}
-            className="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+            className="mt-1 block w-full px-4 py-2 bg-gray-100 text-gray-900 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
             placeholder="Enter contact number"
           />
         </div>
