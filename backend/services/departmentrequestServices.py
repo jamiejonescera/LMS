@@ -64,19 +64,19 @@ def get_top_purchases_per_department():
     try:
         # Query to aggregate and fetch top 10 purchases per department
         top_purchases = db.session.query(
-            DepartmentFacility.department_name,
+            DepartmentFacility.classroom_name,
             Product.name.label('product_name'),
             func.sum(DepartmentRequest.quantity).label('total_purchases')
         ).join(DepartmentRequest, DepartmentFacility.department_id == DepartmentRequest.department_id
         ).join(Product, DepartmentRequest.product_id == Product.product_id
-        ).group_by(DepartmentFacility.department_name, Product.name
-        ).order_by(DepartmentFacility.department_name, func.sum(DepartmentRequest.quantity).desc()
+        ).group_by(DepartmentFacility.classroom_name, Product.name
+        ).order_by(DepartmentFacility.classroom_name, func.sum(DepartmentRequest.quantity).desc()
         ).limit(5).all()  # Limit the results to top 10
 
         # Convert the query result to a list of dictionaries
         top_purchases_list = [
             {
-                'department_name': purchase.department_name,
+                'classroom_name': purchase.classroom_name,
                 'product_name': purchase.product_name,
                 'total_purchases': purchase.total_purchases
             }

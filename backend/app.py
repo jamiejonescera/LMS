@@ -5,6 +5,9 @@ from dotenv import load_dotenv
 import os
 from sqlalchemy import text
 import logging
+from flask import Flask, jsonify
+import requests
+
 
 # Set up logging
 logging.basicConfig(level=logging.DEBUG)
@@ -22,12 +25,40 @@ app = Flask(__name__)
 CORS(app, resources={r"/api/*": {"origins": "*"}})  # Allow all origins for development
 
 
+
 # Get the database URI from environment variables
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Initialize the SQLAlchemy database instance
 db = SQLAlchemy(app)
+
+@app.route('/fetch-classrooms', methods=['GET'])
+def fetch_classrooms():
+    django_api_url = "https://inventoryapp1-o2l3.onrender.com/classroom/"
+    
+    try:
+        response = requests.get(django_api_url)
+        data = response.json()
+        return jsonify(data), response.status_code
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+DJANGO_API_URL = "https://inventoryapp1-o2l3.onrender.com/classroom/"
+
+@app.route('/add-classroom', methods=['POST'])
+def add_classroom():
+    try:
+        # Get data from Postman (or another client)
+        data = request.json  
+
+        # Forward the data to Django API
+        response = requests.post(DJANGO_API_URL, json=data)
+
+        # Return Django's response
+        return jsonify(response.json()), response.status_code  
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 # Define the test route for database connection
 @app.route('/test_db', methods=['GET'])
@@ -49,6 +80,13 @@ def test_endpoint():
     except Exception as e:
         # If there's an error, send a message indicating a failure
         return jsonify({"error": "Failed to connect backend.", "details": str(e)}), 500
+
+@app.route('/api/test1', methods=['GET'])
+def test_connection():
+    return jsonify({"message": "Ready to connect!"})
+
+
+
 
 # Log all incoming requests
 @app.before_request
@@ -89,3 +127,6 @@ def hello():
 # Run the app
 if __name__ == '__main__':
     app.run(debug=os.getenv('DEBUG', 'False') == 'True', port=8000, host='0.0.0.0')
+
+# if __name__ == '__main__':
+#     app.run(debug=True, port=5000)  # Runs on http://localhost:5000

@@ -21,7 +21,7 @@ class DepartmentRequest(db.Model):
         return {
             'department_request_id': self.department_request_id,
             'department_id': self.department_id,
-            'department_name': self.department.department_name if self.department else None,
+            'classroom_name': self.department.classroom_name if self.department else None,
             'product_id': self.product_id,
             'product_name': self.product.name if self.product else None,
             'product_model': self.product.model if self.product else None,

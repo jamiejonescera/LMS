@@ -113,6 +113,11 @@ const Sidebar = () => {
                     <span>Products</span>
                   </Link>
                 </li>
+
+
+
+
+
                 <li>
                   <Link 
                     to="/product-supplier"
@@ -128,15 +133,31 @@ const Sidebar = () => {
 
           {/* Department Facility Route */}
           <hr className="border-t border-gray-300 my-4" />
-          <li>
-            <Link 
-              to="/departments"
-              className={`text-white flex items-center rounded px-4 py-3 transition-all ${isActive('/departments') ? 'bg-green-800' : 'hover:bg-green-800'} text-[15px}`}
-            >
-              <FontAwesomeIcon icon={faBuilding} className="mr-2" />
-              <span>Facility</span>
-            </Link>
-          </li>
+            <li>
+              <Link 
+                to="/departments"
+                className={`text-white flex items-center rounded px-4 py-3 transition-all ${isActive('/departments') ? 'bg-green-800' : 'hover:bg-green-800'} text-[15px}`}
+              >
+                <FontAwesomeIcon icon={faBuilding} className="mr-2" />
+                <span>Facility</span>
+              </Link>
+            </li>
+
+                          
+          {/* <li>
+            <a 
+                href="https://inventoryapp1-o2l3.onrender.com/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-white flex items-center rounded px-4 py-3 transition-all hover:bg-green-800 text-[15px]"
+              >
+                <FontAwesomeIcon icon={faBuilding} className="mr-2" />
+                <span>Facility</span>
+              </a>
+            </li> */}
+
+
+
 
           {/* Purchase Section Toggle */}
           <hr className="border-t border-gray-300 my-4" />

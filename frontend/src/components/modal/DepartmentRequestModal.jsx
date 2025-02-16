@@ -94,7 +94,7 @@ const DepartmentRequestModal = ({ isOpen, onClose, onSubmit }) => {
               {departments && departments.length > 0 ? (
                 departments.map((department) => (
                   <option key={department.department_id} value={department.department_id}>
-                    {department.department_name}
+                    {department.classroom_name}
                   </option>
                 ))
               ) : (

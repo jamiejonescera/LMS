@@ -24,7 +24,7 @@ export default function DepartmentRequest() {
   const filteredRequests = departmentRequests.filter((request) => {
     const searchLower = searchTerm.toLowerCase();
     return (
-      request.department_name.toLowerCase().includes(searchLower) ||
+      request.classroom_name.toLowerCase().includes(searchLower) ||
       request.product_name.toLowerCase().includes(searchLower) ||
       request.product_model.toLowerCase().includes(searchLower) ||
       request.product_brand.toLowerCase().includes(searchLower)
@@ -147,7 +147,7 @@ export default function DepartmentRequest() {
                   className="odd:bg-white even:bg-gray-50 border-b"
                   ref={index === filteredRequests.length - 1 ? newRequestRef : null} 
                 >
-                  <td className="px-6 py-4">{request.department_name}</td>
+                  <td className="px-6 py-4">{request.classroom_name}</td>
                   <td className="px-6 py-4">{request.product_name}</td>
                   <td className="px-6 py-4">{request.product_model}</td>
                   <td className="px-6 py-4">{request.product_brand}</td>
