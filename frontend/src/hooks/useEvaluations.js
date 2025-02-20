@@ -8,8 +8,7 @@ export function useEvaluate() {
   useEffect(() => {
     async function fetchEvaluate() {
       try {
-
-         const response = await fetch('https://lms-backend-58c4.onrender.com/api/evaluate/');
+        const response = await fetch('/api/evaluate/');
         if (!response.ok) {
           throw new Error('Failed to fetch evaluate');
         }

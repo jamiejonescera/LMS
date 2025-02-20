@@ -115,7 +115,7 @@ export default function AddSupplierModal({
           <select
             value={selectedRegion}
             onChange={(e) => setSelectedRegion(e.target.value)}
-            className="mt-1 block w-full px-4 py-2 bg-gray-100 text-gray-900 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+            className="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
           >
             <option value="">Select Region</option>
             {regionList.map((region) => (
@@ -134,7 +134,7 @@ export default function AddSupplierModal({
           <select
             value={selectedProvince}
             onChange={(e) => setSelectedProvince(e.target.value)}
-            className="mt-1 block w-full px-4 py-2 bg-gray-100 text-gray-900 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+            className="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             disabled={!selectedRegion}
           >
             <option value="">Select Province</option>
@@ -154,7 +154,7 @@ export default function AddSupplierModal({
           <select
             value={selectedCity}
             onChange={(e) => setSelectedCity(e.target.value)}
-            className="mt-1 block w-full px-4 py-2 bg-gray-100 text-gray-900 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+            className="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             disabled={!selectedProvince}
           >
             <option value="">Select City</option>
@@ -174,7 +174,7 @@ export default function AddSupplierModal({
           <select
             value={selectedBarangay}
             onChange={(e) => setSelectedBarangay(e.target.value)}
-            className="mt-1 block w-full px-4 py-2 bg-gray-100 text-gray-900 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+            className="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             disabled={!selectedCity}
           >
             <option value="">Select Barangay</option>
@@ -199,7 +199,7 @@ export default function AddSupplierModal({
             id="street"
             value={street}
             onChange={(e) => setStreet(e.target.value)}
-            className="mt-1 block w-full px-4 py-2 bg-gray-100 text-gray-900 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+            className="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             placeholder="Enter street name"
             autoComplete="off"
           />
@@ -219,7 +219,7 @@ export default function AddSupplierModal({
             name="supplier_name"
             value={formData.supplier_name}
             onChange={handleInputChange}
-            className="mt-1 block w-full px-4 py-2 bg-gray-100 text-gray-900 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+            className="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             placeholder="Enter supplier name"
             autoComplete="off"
           />
@@ -243,7 +243,7 @@ export default function AddSupplierModal({
                 handleInputChange(e);
               }
             }}
-            className="mt-1 block w-full px-4 py-2 bg-gray-100 text-gray-900 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+            className="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             placeholder="Enter contact number"
             autoComplete="off"
             maxLength={11}

@@ -8,7 +8,7 @@ export function useTopPurchasesPerDepartment() {
   useEffect(() => {
     async function fetchTopPurchases() {
       try {
-        const response = await fetch('https://lms-backend-58c4.onrender.com/api/department-request/top-purchases');
+        const response = await fetch('/api/department-request/top-purchases');
         if (!response.ok) {
           throw new Error('Failed to fetch top purchases per department');
         }

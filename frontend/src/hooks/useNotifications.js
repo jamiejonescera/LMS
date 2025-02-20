@@ -38,7 +38,7 @@ export function useNotifications() {
 
     const fetchNotifications = async () => {
       try {
-        const response = await fetch('https://lms-backend-58c4.onrender.com/api/notifications');
+        const response = await fetch('/api/inventory/notifications');
         if (!response.ok) {
           throw new Error('Failed to fetch notifications');
         }

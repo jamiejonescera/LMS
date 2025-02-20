@@ -18,7 +18,7 @@ const AddMaintenanceModal = ({ isOpen, onClose, formData, onInputChange, onSubmi
               name="scheduled_date"
               value={formData.scheduled_date}
               onChange={onInputChange}
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 bg-gray-100 text-gray-900 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="w-full border border-gray-300 rounded-lg px-3 py-2"
               required
             />
           </div>
@@ -29,7 +29,7 @@ const AddMaintenanceModal = ({ isOpen, onClose, formData, onInputChange, onSubmi
               name="engineer_name"
               value={formData.engineer_name}
               onChange={onInputChange}
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 bg-gray-100 text-gray-900 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="w-full border border-gray-300 rounded-lg px-3 py-2"
               required
               autoComplete="off"
               placeholder="Enter engineer name"
@@ -41,7 +41,7 @@ const AddMaintenanceModal = ({ isOpen, onClose, formData, onInputChange, onSubmi
               name="product_id"
               value={formData.product_id}
               onChange={onInputChange}
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 bg-gray-100 text-gray-900 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="w-full border border-gray-300 rounded-lg px-3 py-2"
             >
               <option value="">Select Asset</option>
               {products
@@ -60,7 +60,7 @@ const AddMaintenanceModal = ({ isOpen, onClose, formData, onInputChange, onSubmi
               name="description"
               value={formData.description}
               onChange={onInputChange}
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 bg-gray-100 text-gray-900 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="w-full border border-gray-300 rounded-lg px-3 py-2"
               required
               autoComplete="off"
               placeholder="Enter problem description"

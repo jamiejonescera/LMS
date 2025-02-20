@@ -8,7 +8,7 @@ export function useProductSuppliers() {
   useEffect(() => {
     async function fetchProductSuppliers() {
       try {
-        const response = await fetch('https://lms-backend-58c4.onrender.com/api/product-suppliers/');
+        const response = await fetch('/api/product-suppliers/');
         if (!response.ok) {
           throw new Error('Failed to fetch product suppliers');
         }
